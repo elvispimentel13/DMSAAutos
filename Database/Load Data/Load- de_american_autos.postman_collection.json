@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "f463e79e-2b9e-4266-b2f0-48de378c09a1",
+		"name": "Load: de_american_autos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5818912"
+	},
+	"item": [
+		{
+			"name": "Get Models for Make",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set('makeName', 'honda');\r",
+							"console.info(pm.environment.get(\"makeName\"));\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"class Result {\r",
+							"    constructor(Count, Message, SearchCriteria, Results)\r",
+							"    {\r",
+							"        this.Count = Count,\r",
+							"        this.Message = Message,\r",
+							"        this.SearchCriteria = SearchCriteria,\r",
+							"        this.Results = Results\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Valid JSON\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    let result = new Result(jsonData.Count, jsonData.Message, jsonData.SearchCriteria, jsonData.Results);\r",
+							"    let query = [];\r",
+							"    result.Results.map(m=> query.push(`SELECT (\\'${m.Make_Name}\\' MakeName, \\'${m.Model_Name}\\' ModelName) UNION ALL `));\r",
+							"    console.log(query.flat().join('\\n'));\r",
+							"    \r",
+							"    //pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/{{makeName}}?format=json",
+					"protocol": "https",
+					"host": [
+						"vpic",
+						"nhtsa",
+						"dot",
+						"gov"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"getmodelsformake",
+						"{{makeName}}"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Models for Make by ID and Type",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let MakeName = 'Cadillac';\r",
+							"let urlRequest = \"https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/MakeName?format=json\".replace('MakeName', MakeName);\r",
+							"pm.sendRequest(urlRequest, function (err, response) {\r",
+							"    pm.environment.set('makeID', response.json().Results[0]['Make_ID']); \r",
+							"});\r",
+							"console.info(pm.environment.get(\"makeID\"));\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"class Result {\r",
+							"    constructor(Count, Message, SearchCriteria, Results)\r",
+							"    {\r",
+							"        this.Count = Count,\r",
+							"        this.Message = Message,\r",
+							"        this.SearchCriteria = SearchCriteria,\r",
+							"        this.Results = Results\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Valid JSON\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    let result = new Result(jsonData.Count, jsonData.Message, jsonData.SearchCriteria, jsonData.Results);\r",
+							"    let query = [];\r",
+							"    result.Results.map((m, i)=> query.push(`SELECT ${m.Make_ID} MakeID_External, \\'${m.Model_Name}\\' ModelName ${(i == result.Results.length-1)? '': 'UNION ALL'}`));\r",
+							"    console.log(query.flat().join('\\n'));\r",
+							"    \r",
+							"    //pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{{makeID}}/vehicleType/car?format=json",
+					"protocol": "https",
+					"host": [
+						"vpic",
+						"nhtsa",
+						"dot",
+						"gov"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"GetModelsForMakeIdYear",
+						"makeId",
+						"{{makeID}}",
+						"vehicleType",
+						"car"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Models for Make by ID and Type [Iteration]",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var makeName = pm.iterationData.get('MakeName');\r",
+							"var vehicleType = pm.iterationData.get('Type');\r",
+							"pm.environment.set('MakeName', makeName);\r",
+							"pm.environment.set('Type', vehicleType);\r",
+							"let urlRequest = pm.environment.get('urlModelsAndTypes').replace('MakeName', makeName);\r",
+							"pm.sendRequest(urlRequest, function (err, response) {\r",
+							"    pm.environment.set('MakeID', response.json().Results[0]['Make_ID']); \r",
+							"});\r",
+							"console.info(pm.environment.get(\"MakeID\") + \"-\" + makeName + \"-\" + vehicleType);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"class Result {\r",
+							"    constructor(Count, Message, SearchCriteria, Results)\r",
+							"    {\r",
+							"        this.Count = Count,\r",
+							"        this.Message = Message,\r",
+							"        this.SearchCriteria = SearchCriteria,\r",
+							"        this.Results = Results\r",
+							"    }\r",
+							"}\r",
+							"pm.test(\"Valid Result String Query\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    let result = new Result(jsonData.Count, jsonData.Message, jsonData.SearchCriteria, jsonData.Results);\r",
+							"    let query = [];\r",
+							"    result.Results.map((m, i)=> query.push(`SELECT ${m.Make_ID} MakeID_External, \\'${m.Model_Name}\\' ModelName, \\'${pm.environment.get('MakeName')}\\' MakeName ${(i == result.Results.length-1)? '': 'UNION ALL'}`));\r",
+							"    query = query.flat().join('\\n');\r",
+							"    console.log(query);    \r",
+							"    pm.expect(query).to.be.a('string').includes('SELECT');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{{MakeID}}/vehicleType/{{Type}}?format=json",
+					"protocol": "https",
+					"host": [
+						"vpic",
+						"nhtsa",
+						"dot",
+						"gov"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"GetModelsForMakeIdYear",
+						"makeId",
+						"{{MakeID}}",
+						"vehicleType",
+						"{{Type}}"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
