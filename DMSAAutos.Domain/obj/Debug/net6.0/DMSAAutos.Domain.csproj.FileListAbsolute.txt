@@ -12,3 +12,17 @@ D:\Personal\Dominion Enterprises\Practical Assignment\DMS American Autos\DMSAAut
 D:\Personal\Dominion Enterprises\Practical Assignment\DMS American Autos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.pdb
 D:\Personal\Dominion Enterprises\Practical Assignment\DMS American Autos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.genruntimeconfig.cache
 D:\Personal\Dominion Enterprises\Practical Assignment\DMS American Autos\DMSAAutos.Domain\obj\Debug\net6.0\ref\DMSAAutos.Domain.dll
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.deps.json
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.runtimeconfig.json
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.dll
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.pdb
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.csproj.AssemblyReference.cache
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.AssemblyInfoInputs.cache
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.AssemblyInfo.cs
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.csproj.CoreCompileInputs.cache
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.dll
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\refint\DMSAAutos.Domain.dll
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.pdb
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.genruntimeconfig.cache
+D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\ref\DMSAAutos.Domain.dll

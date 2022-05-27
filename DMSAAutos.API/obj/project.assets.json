@@ -3828,11 +3828,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.API\\DMSAAutos.API.csproj",
+      "projectUniqueName": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.API\\DMSAAutos.API.csproj",
       "projectName": "DMSAAutos.API",
-      "projectPath": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.API\\DMSAAutos.API.csproj",
+      "projectPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.API\\DMSAAutos.API.csproj",
       "packagesPath": "C:\\Users\\Elvis Pimentel\\.nuget\\packages\\",
-      "outputPath": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.API\\obj\\",
+      "outputPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Elvis Pimentel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3849,8 +3849,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj": {
-              "projectPath": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj"
+            "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj": {
+              "projectPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj"
             }
           }
         }

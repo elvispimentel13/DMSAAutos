@@ -1865,11 +1865,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
+      "projectUniqueName": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
       "projectName": "DMSAAutos.Domain",
-      "projectPath": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
+      "projectPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
       "packagesPath": "C:\\Users\\Elvis Pimentel\\.nuget\\packages\\",
-      "outputPath": "D:\\Personal\\Dominion Enterprises\\Practical Assignment\\DMS American Autos\\DMSAAutos.Domain\\obj\\",
+      "outputPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Elvis Pimentel\\AppData\\Roaming\\NuGet\\NuGet.Config",
