@@ -1,0 +1,15 @@
+﻿global using DMSAAutos.API.Models.DataTransferObjects;
+global using DMSAAutos.API.Extensions;
+global using DMSAAutos.API.Interfaces;
+global using DMSAAutos.Infrastructure;
+global using DMSAAutos.API.Repositories;
+global using DMSAAutos.API.Services;
+global using DMSAAutos.Domain.Interfaces;
+global using DMSAAutos.Domain.Models;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.OpenApi.Models;
+global using Microsoft.AspNetCore.HttpOverrides;
+global using System.Reflection;
+global using System.Net;
+global using AutoMapper;
