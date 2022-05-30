@@ -11,3 +11,12 @@
 .DS_Store
 Thumbs.db
 *.vsidx
+
+*.suo
+*.user
+DMSAAutos.API/obj
+DMSAAutos.API/bin
+DMSAAutos.Domain/bin
+DMSAAutos.Domain/obj
+DMSAAutos.Infrastructure/bin
+DMSAAutos.Infrastructure/obj
