@@ -26,3 +26,17 @@ D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\refint\DMSAAut
 D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.pdb
 D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.genruntimeconfig.cache
 D:\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\ref\DMSAAutos.Domain.dll
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.deps.json
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.runtimeconfig.json
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.dll
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\bin\Debug\net6.0\DMSAAutos.Domain.pdb
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.csproj.AssemblyReference.cache
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.AssemblyInfoInputs.cache
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.AssemblyInfo.cs
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.csproj.CoreCompileInputs.cache
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.dll
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\refint\DMSAAutos.Domain.dll
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.pdb
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\DMSAAutos.Domain.genruntimeconfig.cache
+D:\Personal\Dominion Enterprises\DMS American Autos\DMSAAutos\DMSAAutos.Domain\obj\Debug\net6.0\ref\DMSAAutos.Domain.dll

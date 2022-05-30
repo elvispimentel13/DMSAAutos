@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj": {}
+    "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj": {
+    "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
+        "projectUniqueName": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
         "projectName": "DMSAAutos.Domain",
-        "projectPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
+        "projectPath": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj",
         "packagesPath": "C:\\Users\\Elvis Pimentel\\.nuget\\packages\\",
-        "outputPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\obj\\",
+        "outputPath": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elvis Pimentel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj": {
+    "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj",
         "projectName": "DMSAAutos.Infrastructure",
-        "projectPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj",
+        "projectPath": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\DMSAAutos.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Elvis Pimentel\\.nuget\\packages\\",
-        "outputPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\obj\\",
+        "outputPath": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elvis Pimentel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,8 +98,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj": {
-                "projectPath": "D:\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj"
+              "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj": {
+                "projectPath": "D:\\Personal\\Dominion Enterprises\\DMS American Autos\\DMSAAutos\\DMSAAutos.Domain\\DMSAAutos.Domain.csproj"
               }
             }
           }

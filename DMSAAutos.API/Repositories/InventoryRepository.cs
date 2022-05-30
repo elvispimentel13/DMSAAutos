@@ -25,6 +25,7 @@ public class InventoryRepository : IInventoryRepository
     /// </summary>
     public async Task<Inventory> GetInventoryItemAsync(int inventoryId)
     {
+
         var inventoryItem = await _context.Inventories.FirstOrDefaultAsync(i => i.InventoryId == inventoryId);
         if (inventoryItem == null)
             inventoryItem = _context.Inventories.Local.FirstOrDefault(i => i.InventoryId == inventoryId);
