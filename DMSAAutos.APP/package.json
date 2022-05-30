@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --proxy-config proxy.conf.json",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build -o --configuration development --proxy-config proxy.config.json",
     "test": "ng test",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
