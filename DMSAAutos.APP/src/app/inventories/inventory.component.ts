@@ -1,12 +1,12 @@
 import { InventoryService } from './inventory.service';
 import { Component, OnInit, ViewChild, 
-         Output, EventEmitter, OnChanges, 
-         ChangeDetectionStrategy } from '@angular/core';
-import { Inventory } from '../interfaces/inventory';
+         Output, EventEmitter } from '@angular/core';
+import { IInventory } from '../interfaces/inventory';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router,NavigationStart } from '@angular/router';
+import { DealerInventory } from "../models/dealerInventory";
 @Component({
     selector: 'app-inventory',
     templateUrl: './inventory.component.html',
@@ -17,8 +17,8 @@ import { Router,NavigationStart } from '@angular/router';
 export class InventoryComponent implements OnInit {
     @Output() inventoryListAction: EventEmitter<any> = new EventEmitter()
     @Output() updateRecordsQuantity:EventEmitter<number> = new EventEmitter();
-    inventory: Inventory[] = [];
-    
+    inventory: IInventory[] = [];
+    dealerInventory?: DealerInventory = new DealerInventory();
     displayedColumns: string[] = ['inventoryId', 'dealerName', 
                                   'displayName', 'vin', 'price', 'odometer', 
                                   'vehicleYear', 'vehicleStatus'];
@@ -40,6 +40,8 @@ export class InventoryComponent implements OnInit {
             url = url.filter(r=>r);
             this.currentRoute = url[0];
             this.dealerItemInfo = (url.length>1)?url[1]: "";
+            if(this.currentRoute == "assignment" && this.dealerItemInfo == "")
+              this.dealerItemInfo = "dealer1";
             this.getInventory(this.dealerItemInfo, this.currentRoute);
           }
         }
@@ -49,12 +51,19 @@ export class InventoryComponent implements OnInit {
       this.inventoryService.getInventory(dealerItemInfo, currentRoute)
         .subscribe({
           next:(inventory)=>{
-            this.inventory = inventory;
-            this.dataSource = new MatTableDataSource(inventory);
+            let itemsQty = 0;
+            const result = this.dealerInventory?.getInventory(dealerItemInfo, inventory, currentRoute);
+            if(result){
+              this.dataSource = new MatTableDataSource(result);
+              itemsQty = result.length;
+            }
+            else {
+              this.dataSource = new MatTableDataSource(inventory);
+              itemsQty = inventory.length;
+            }
             this.dataSource.paginator = this.paginator;
             this.dataSource.sort = this.sort;
-            this.updateRecordsQuantity.emit(this.inventory.length)
-            this.inventoryListAction.emit({path: dealerItemInfo, route: currentRoute});
+            this.updateRecordsQuantity.emit(itemsQty)
           },
           error:(err)=>{
             console.log(err);

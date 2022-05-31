@@ -1,4 +1,4 @@
-export interface Inventory{
+export interface IInventory{
     inventoryId: number;
     dealerId: number;
     dealerName: string;

@@ -3,7 +3,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, firstValueFrom } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Inventory } from '../interfaces/inventory';
+import { IInventory } from '../interfaces/inventory';
+import { Dealer1 } from '../models/dealer1';
+import { Dealer2 } from '../models/dealer2';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 import config from '../../assets/config.json';
 const httpOptions = {
@@ -21,16 +23,18 @@ export class InventoryService {
     httpErrorHandler: HttpErrorHandler) {
     this.errorHandler = httpErrorHandler.createHandleError('InventoryService');
   }
-  getInventory(dealerItemInfo:string, currentRoute: string): Observable<Inventory[]> {
+  getInventory<T extends IInventory>(dealerItemInfo:string, currentRoute: string): Observable<T[]> {
     let apiUrl: string = this.inventoryBaseUrl;   
-    let resultList: boolean = true;
     if(currentRoute)
     {
+      if(currentRoute == "assignment"){
+        apiUrl = apiUrl.replace("list", currentRoute);
+      }
       if(dealerItemInfo){
         apiUrl += dealerItemInfo;
       }
     }
-    return this.http.get<Inventory[]>(apiUrl)
+    return this.http.get<T[]>(apiUrl)
                     .pipe(
                       catchError(this.errorHandler('getInventory', []))
                     );     

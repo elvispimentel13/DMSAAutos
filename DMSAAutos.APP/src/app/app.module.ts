@@ -17,6 +17,7 @@ import { MatInputModule }from '@angular/material/input';
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    MatBadgeModule
-    
+    MatBadgeModule,
+    MatSlideToggleModule
   ],
   providers: [
     HttpErrorHandler,

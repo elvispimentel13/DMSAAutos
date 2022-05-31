@@ -3,7 +3,12 @@
     <mat-icon>directions_car</mat-icon>
   </button>
   <span>DMS American Autos</span>
-  <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <mat-slide-toggle class="example-margin"
+    [checked]="assignmentChecked"
+      (change)="toggle($event)">
+      Assignment
+    </mat-slide-toggle>
   <button mat-raised-button matBadge={{inventoryRecords}} matBadgePosition="before" matBadgeColor="accent">
     <span>{{currentActionDescription}}</span>
     <mat-icon>{{currentAction}}</mat-icon>
@@ -12,7 +17,7 @@
     <mat-icon>apps</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="inventoryListAction('home')">
+    <button mat-menu-item [disabled]="assignmentChecked" (click)="inventoryListAction('home')">
       <mat-icon>home</mat-icon>
       <span>Inventory</span>
     </button>
@@ -29,6 +34,7 @@
 
 <div class="container">
   <section *ngIf="showInventory">
-    <app-inventory (updateRecordsQuantity)="updateRecordsQuantity($event)" (inventoryListAction)="inventoryListAction($event)"></app-inventory>
+    <app-inventory (updateRecordsQuantity)="updateRecordsQuantity($event)" ></app-inventory>
+    <!-- (inventoryListAction)="inventoryListAction($event)" -->
   </section>
 </div>
