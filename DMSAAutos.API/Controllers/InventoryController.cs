@@ -88,6 +88,13 @@ public class InventoryController : ControllerBase
     {
         try
         {
+            if (string.IsNullOrWhiteSpace(dealerName))
+            {
+                string dealerNameInvalid = $"Dealer name is invalid at GetFilteredInventoryAsync({dealerName})";
+                _logger.LogWarning(dealerNameInvalid);
+                return NotFound(dealerNameInvalid);
+            }
+            dealerName = ExtensionMethods.ReplaceWhitespace(dealerName);
             var dealerInventory = await _inventoryRepository.GetInventoryAsync(dealerName);
             if (dealerInventory == null || !dealerInventory.Any())
             {
@@ -127,7 +134,7 @@ public class InventoryController : ControllerBase
                 _logger.LogWarning(dealerNameInvalid);
                 return NotFound(dealerNameInvalid);
             }
-
+            dealerName = ExtensionMethods.ReplaceWhitespace(dealerName);
             switch (dealerName)
             {
                 case "dealer1":

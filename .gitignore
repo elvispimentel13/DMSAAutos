@@ -1,0 +1,22 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+.vs/
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+*.vsidx
+
+*.suo
+*.user
+DMSAAutos.API/obj
+DMSAAutos.API/bin
+DMSAAutos.Domain/bin
+DMSAAutos.Domain/obj
+DMSAAutos.Infrastructure/bin
+DMSAAutos.Infrastructure/obj

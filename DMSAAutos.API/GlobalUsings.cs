@@ -10,6 +10,7 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.OpenApi.Models;
 global using Microsoft.AspNetCore.HttpOverrides;
+global using System.Text.RegularExpressions;
 global using System.Reflection;
 global using System.Net;
 global using AutoMapper;

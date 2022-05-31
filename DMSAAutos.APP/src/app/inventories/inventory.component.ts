@@ -1,27 +1,25 @@
 import { InventoryService } from './inventory.service';
 import { Component, OnInit, ViewChild, 
-         Output, EventEmitter, OnChanges, 
-         ChangeDetectionStrategy } from '@angular/core';
-import { Inventory } from '../interfaces/inventory';
-
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+         Output, EventEmitter } from '@angular/core';
+import { IInventory } from '../interfaces/inventory';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router,NavigationStart } from '@angular/router';
-
+import { DealerInventory } from "../models/dealerInventory";
 @Component({
     selector: 'app-inventory',
     templateUrl: './inventory.component.html',
     providers: [InventoryService],
-    styleUrls: ['./inventory.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush   
+    styleUrls: ['./inventory.component.scss']
 })
 
 export class InventoryComponent implements OnInit {
     @Output() inventoryListAction: EventEmitter<any> = new EventEmitter()
     @Output() updateRecordsQuantity:EventEmitter<number> = new EventEmitter();
-    inventory: Inventory[] = [];
-    displayedColumns: string[] = ['inventoryId', 'dealerName', //'makeName', 'modelName', 'transmissionType',
+    inventory: IInventory[] = [];
+    dealerInventory?: DealerInventory = new DealerInventory();
+    displayedColumns: string[] = ['inventoryId', 'dealerName', 
                                   'displayName', 'vin', 'price', 'odometer', 
                                   'vehicleYear', 'vehicleStatus'];
     dataSource!: MatTableDataSource<any>;
@@ -42,34 +40,42 @@ export class InventoryComponent implements OnInit {
             url = url.filter(r=>r);
             this.currentRoute = url[0];
             this.dealerItemInfo = (url.length>1)?url[1]: "";
+            if(this.currentRoute == "assignment" && this.dealerItemInfo == "")
+              this.dealerItemInfo = "dealer1";
             this.getInventory(this.dealerItemInfo, this.currentRoute);
           }
         }
       });
-      }
-    
-      getInventory(dealerItemInfo: string, currentRoute: string): void {
-        this.inventoryService.getInventory(dealerItemInfo, currentRoute)
-          .subscribe({
-            next:(inventory)=>{
-              this.inventory = inventory;
-              this.dataSource = new MatTableDataSource(inventory);
-              this.dataSource.paginator = this.paginator;
-              this.dataSource.sort = this.sort;
-              this.updateRecordsQuantity.emit(this.inventory.length)
-              this.inventoryListAction.emit({path: dealerItemInfo, route: currentRoute});
-            },
-            error:(err)=>{
-              console.log(err);
+    }
+    getInventory(dealerItemInfo: string, currentRoute: string): void {
+      this.inventoryService.getInventory(dealerItemInfo, currentRoute)
+        .subscribe({
+          next:(inventory)=>{
+            let itemsQty = 0;
+            const result = this.dealerInventory?.getInventory(dealerItemInfo, inventory, currentRoute);
+            if(result){
+              this.dataSource = new MatTableDataSource(result);
+              itemsQty = result.length;
             }
-          });
-      }
-      applyFilter(event: Event) {
-        const filterValue = (event.target as HTMLInputElement).value;
-        this.dataSource.filter = filterValue.trim().toLowerCase();
-    
-        if (this.dataSource.paginator) {
-          this.dataSource.paginator.firstPage();
-        }
+            else {
+              this.dataSource = new MatTableDataSource(inventory);
+              itemsQty = inventory.length;
+            }
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+            this.updateRecordsQuantity.emit(itemsQty)
+          },
+          error:(err)=>{
+            console.log(err);
+          }
+        });
+    }
+    applyFilter(event: Event) {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+      if (this.dataSource.paginator) {
+        this.dataSource.paginator.firstPage();
       }
     }
+}

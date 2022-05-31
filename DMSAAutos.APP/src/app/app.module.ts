@@ -3,27 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InventoryComponent } from './inventories/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTableModule} from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
-import {MatInputModule}from '@angular/material/input';
-
+import { InventoryComponent } from './inventories/inventory.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule }from '@angular/material/input';
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InventoryComponent
+    InventoryComponent  
   ],
   imports: [
     BrowserModule,
@@ -39,7 +38,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSlideToggleModule
   ],
   providers: [
     HttpErrorHandler,
